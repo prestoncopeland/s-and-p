@@ -1,4 +1,5 @@
 <% if user_signed_in? %>
+
   <% if current_user.admin? %>
     <h3>Admin</h3>
     <p><%= link_to 'User count:', users_path %> <%= User.count %></p>
@@ -6,35 +7,135 @@
     <h3>You've signed up. Download a free book.</h3>
     <%= link_to 'Download PDF', products_path('product.pdf'), class: 'btn btn-success btn-large' %>
   <% end %>
+
 <% else %>
-  <div id="welcome" class="span7">
-    <h1>Membership Site</h1>
-    <h3>Learn to build a successful subscription site.</h3>
+
+
+
+
+        <div class="row">
+        <hr>
+        <div class="large-2 columns">
+          <img src="http://cbsnews2.cbsistatic.com/hub/i/r/2011/11/09/58502aa0-a645-11e2-a3f0-029118418759/thumbnail/620x350/0f973121e79f37773312dcd808391986/sexy-woman-computer640x480.jpg">
+          <br>
+          <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/100px-Ruby_logo.svg.png">
+          <br>
+          <img src="http://www.essence.com/sites/default/files/images/embed/aa-woman-on-laptop-computer.jpg">
+          <br>
+          <p>Demo: Hot Angela </p>
+          <!--<img src="http://upload.wikimedia.org/wikipedia/commons/1/16/Ruby_on_Rails-logo.png"> -->
+        </div>
+        <div class="large-5 columns">
+          <img src="http://thumbs.dreamstime.com/z/surprised-man-looking-sexy-woman-16418781.jpg">
+        </div>
+        <div class="large-5 columns">
+          <h1>SEX AND PROGRAMMING: </h1><h3> Let's code it, baby!</h3>
+          <p>Shh … don't tell your boss. Don't tell your grandma. Don't tell your girlfriend.* Don't tell anyone about this site!</p>
+
+          <p>Do you want the hands-down, most fun way to <em>FINALLY</em> learn to program? Do you want it to be so memorable, so engaging, that you never forget the concepts again? Let us ask you three questions:</p>
+
+          <div class="panel">
+          <h6 class="subheader">
+            <ol>
+              <li>Do you want to learn to program?</li>
+              <li>Do you like sex?</li>
+              <li>Why not do both? </li>
+            </ol>
+          </h6>
+          </div>
+
+          <p>At <strong>Sex and Programming</strong>, you can do two of your favorite things at the same time: look at hot girls and learn how to program.
+          </p>
+
+          <p>Think of how many browser tabs you can close! Everything's in one place now!
+          </p>
+        </div>
+
+        </div>
+
+        <div class="row">
+        <hr/>
+        <div class="large-6 columns">
+          <h4><strong>THE CONCEPT</strong></h4>
+          <p>The concept is simple: You learn a bite-sized programming concept. You input your answer. If it's right, you get a hot visual surprise. If it's wrong … well, we don't want to ruin the fun!</p>
+          <p>
+            The science: Who are we kidding? There is no science. But we think that you will be much more motivated to get an exercise right if you know jugs are right around the corner. You will love it.
+          </p>
+        </div>
+        <div class="large-6 columns">
+          <h4><strong>THE DEMO</strong></h4>
+          <p>Try our demo lesson with Angela on the left! She's going to teach you the Ruby #chomp method so that you never, ever forget it. You will be on your deathbed, and all you'll be able to think about is Angela and #chomp.
+          </p>
+          <p>
+            If you like the demo, there are three ways to finally learn to program. This is it! This is your solution! Sign up already! Let's code it, baby!
+          </p>
+
+        </div>
+        </div>
+
+  <div class="row">
+
+              <div class="large-12 show-for-small columns">
+              <h3>Header</h3><hr>
+            </div>
+
+
+              <div class="large-4 small-6 columns">
+                <div class="plan"><h2>Ruby Plan</h2></div>
+                <ul class="list-unstyled">
+                  <li>Sex and Ruby: Access to all Ruby lessons</li>
+                </ul>
+                <h3>$4.95/month</h3>
+                <div class="panel">
+                  <p><%= link_to 'Subscribe', new_user_registration_path(plan: 'silver'), :class => 'btn btn-primary' %></p>
+                </div>
+              </div>
+
+
+              <div class="large-4 small-6 columns">
+                <div class="plan featured-plan"><h2>All Features Plan</h2></div>
+                <ul class="list-unstyled">
+                  <li>Sex and Programming: Access to all site content (definitely your best bet because we're expanding)</li>
+                </ul>
+                <h3>$9.95/month</h3>
+                <div class="panel">
+                  <p><%= link_to 'Subscribe', new_user_registration_path(plan: 'gold'), :class => 'btn btn-primary' %></p>
+                </div>
+              </div>
+
+
+
+              <div class="large-4 small-6 columns">
+                <div class="plan"><h2>Sex and Programming: The Ebook</h2></div>
+                <ul class="list-unstyled">
+                  <li>Hot girls all over hot code: Coming soon (intended)</li>
+                </ul>
+                <h3>$15.00</h3>
+                <div class="panel">
+                  <p><%= link_to 'Purchase', new_user_registration_path(plan: 'platinum'), :class => 'btn btn-primary' %></p>
+                </div>
+              </div>
+
   </div>
-  <div class="row col-sm-12 plans">
-    <div class="col-sm-2 well">
-      <div class="plan"><h2>Silver</h2></div>
-      <ul class="list-unstyled">
-        <li>One lesson a month</li>
-      </ul>
-      <h3>$9/month</h3>
-      <%= link_to 'Subscribe', new_user_registration_path(plan: 'silver'), :class => 'btn btn-primary' %>
-    </div>
-    <div class="col-sm-2 well featured">
-      <div class="plan featured-plan"><h2>Gold</h2></div>
-      <ul class="list-unstyled">
-        <li>Ten lessons a month</li>
-      </ul>
-      <h3>$19/month</h3>
-      <%= link_to 'Subscribe', new_user_registration_path(plan: 'gold'), :class => 'btn btn-primary' %>
-    </div>
-    <div class="col-sm-2 well">
-      <div class="plan"><h2>Platinum</h2></div>
-      <ul class="list-unstyled">
-        <li>Thirty lessons a month</li>
-      </ul>
-      <h3>$29/month</h3>
-      <%= link_to 'Subscribe', new_user_registration_path(plan: 'platinum'), :class => 'btn btn-primary' %>
-    </div>
-  </div>
+
+
+
+        <footer class="row">
+        <div class="large-12 columns">
+          <hr>
+          <div class="row">
+            <div class="large-6 columns">
+              <p>*"Hey man, I'm gay!" Never fear: Click to the right to go to our brother site, <strong>Sex and Programming: The Gay Edition.</strong></p>
+            </div>
+            <div class="large-6 columns">
+              <ul class="inline-list right">
+                <li><a href="#">Sex and Programming: The Gay Edition</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Disclaimer</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </footer>
+
 <% end %>

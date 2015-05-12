@@ -13,5 +13,8 @@
 //= require jquery
 //= require payola
 //= require jquery_ujs
-//= require bootstrap-sprockets
+//= require foundation
 //= require_tree .
+$(function() {
+  $(document).foundation();
+});
